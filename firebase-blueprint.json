@@ -1,0 +1,113 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Public profile for a user",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "totalPoints": { "type": "number" },
+        "exacts": { "type": "number" },
+        "closes": { "type": "number" }
+      },
+      "required": ["displayName", "totalPoints", "exacts", "closes"]
+    },
+    "League": {
+      "title": "League",
+      "description": "Private League",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "hostId": { "type": "string" },
+        "code": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "hostId", "code", "createdAt"]
+    },
+    "LeagueMember": {
+      "title": "League Member",
+      "description": "A member inside a league",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "role": { "type": "string", "enum": ["host", "player"] },
+        "joinedAt": { "type": "number" },
+        "points": { "type": "number" },
+        "exacts": { "type": "number" },
+        "closes": { "type": "number" }
+      },
+      "required": ["userId", "role", "joinedAt", "points", "exacts", "closes"]
+    },
+    "LeagueChatMessage": {
+      "title": "League Chat Message",
+      "description": "Message in league wall chat",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["userId", "text", "createdAt"]
+    },
+    "Match": {
+      "title": "Match",
+      "description": "World cup match fixture",
+      "type": "object",
+      "properties": {
+        "teamA": { "type": "string" },
+        "teamB": { "type": "string" },
+        "flagA": { "type": "string" },
+        "flagB": { "type": "string" },
+        "date": { "type": "string" },
+        "kickoffTime": { "type": "number" },
+        "stadium": { "type": "string" },
+        "status": { "type": "string", "enum": ["scheduled", "in_play", "finished"] },
+        "scoreA": { "type": "number" },
+        "scoreB": { "type": "number" },
+        "round": { "type": "string" }
+      },
+      "required": ["teamA", "teamB", "flagA", "flagB", "date", "kickoffTime", "stadium", "status", "round"]
+    },
+    "Prediction": {
+      "title": "Match Prediction",
+      "description": "User prediction for a match",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "matchId": { "type": "string" },
+        "scoreA": { "type": "number" },
+        "scoreB": { "type": "number" },
+        "updatedAt": { "type": "number" },
+        "points": { "type": "number" }
+      },
+      "required": ["userId", "matchId", "scoreA", "scoreB", "updatedAt", "points"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Stores user profiles with simple stats. Created on first login."
+    },
+    "leagues/{leagueId}": {
+      "schema": { "$ref": "#/entities/League" },
+      "description": "Leagues created by users."
+    },
+    "leagues/{leagueId}/members/{userId}": {
+      "schema": { "$ref": "#/entities/LeagueMember" },
+      "description": "Members that belong to a league. Subcollection is used to restrict data fetching."
+    },
+    "leagues/{leagueId}/chat/{messageId}": {
+      "schema": { "$ref": "#/entities/LeagueChatMessage" },
+      "description": "Chat messages within a league."
+    },
+    "matches/{matchId}": {
+      "schema": { "$ref": "#/entities/Match" },
+      "description": "Match fixtures."
+    },
+    "matches/{matchId}/predictions/{predictionId}": {
+      "schema": { "$ref": "#/entities/Prediction" },
+      "description": "User predictions. Prediction ID is the user ID."
+    }
+  }
+}

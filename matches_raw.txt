@@ -1,0 +1,112 @@
+Putaran 1 (Matchday 1)
+- 11 Jun 2026 19:00 UTC | Meksiko vs Afrika Selatan | Estadio Azteca, Mexico City, Meksiko
+- 12 Jun 2026 02:00 UTC | Korea Selatan vs Ceko | Estadio Akron, Guadalajara, Meksiko
+- 12 Jun 2026 19:00 UTC | Kanada vs Bosnia dan Herzegovina | BMO Field, Toronto, Kanada
+- 13 Jun 2026 01:00 UTC | Amerika Serikat vs Paraguay | SoFi Stadium, Los Angeles, USA
+- 13 Jun 2026 19:00 UTC | Qatar vs Swiss | Levi's Stadium, Santa Clara, USA
+- 13 Jun 2026 22:00 UTC | Brasil vs Maroko | MetLife Stadium, East Rutherford, USA
+- 14 Jun 2026 01:00 UTC | Haiti vs Skotlandia | Gillette Stadium, Foxborough, USA
+- 14 Jun 2026 04:00 UTC | Australia vs Turki | BC Place Stadium, Vancouver, Kanada
+- 14 Jun 2026 17:00 UTC | Jerman vs Curaçao | NRG Stadium, Houston, USA
+- 14 Jun 2026 20:00 UTC | Belanda vs Jepang | AT&T Stadium, Dallas, USA
+- 14 Jun 2026 23:00 UTC | Pantai Gading vs Ekuador | Lincoln Financial Field, Philadelphia, USA
+- 15 Jun 2026 02:00 UTC | Swedia vs Tunisia | Estadio BBVA, Monterrey, Meksiko
+- 15 Jun 2026 16:00 UTC | Spanyol vs Tanjung Verde | Mercedes-Benz Stadium, Atlanta, USA
+- 15 Jun 2026 19:00 UTC | Belgia vs Mesir | Lumen Field, Seattle, USA
+- 15 Jun 2026 22:00 UTC | Arab Saudi vs Uruguay | Hard Rock Stadium, Miami Gardens, USA
+- 16 Jun 2026 01:00 UTC | Iran vs Selandia Baru | SoFi Stadium, Los Angeles, USA
+- 16 Jun 2026 19:00 UTC | Prancis vs Senegal | MetLife Stadium, East Rutherford, USA
+- 16 Jun 2026 22:00 UTC | Irak vs Norwegia | Gillette Stadium, Foxborough, USA
+- 17 Jun 2026 01:00 UTC | Argentina vs Aljazair | Arrowhead Stadium, Kansas City, USA
+- 17 Jun 2026 04:00 UTC | Austria vs Yordania | Levi's Stadium, Santa Clara, USA
+- 17 Jun 2026 17:00 UTC | Portugal vs Kongo DR | NRG Stadium, Houston, USA
+- 17 Jun 2026 20:00 UTC | Inggris vs Kroasia | AT&T Stadium, Dallas, USA
+- 17 Jun 2026 23:00 UTC | Ghana vs Panama | BMO Field, Toronto, Kanada
+- 18 Jun 2026 02:00 UTC | Uzbekistan vs Kolombia | Estadio Azteca, Mexico City, Meksiko
+Putaran 2 (Matchday 2)
+- 18 Jun 2026 16:00 UTC | Ceko vs Afrika Selatan | Mercedes-Benz Stadium, Atlanta, USA
+- 18 Jun 2026 19:00 UTC | Swiss vs Bosnia dan Herzegovina | SoFi Stadium, Los Angeles, USA
+- 18 Jun 2026 22:00 UTC | Kanada vs Qatar | BC Place Stadium, Vancouver, Kanada
+- 19 Jun 2026 01:00 UTC | Meksiko vs Korea Selatan | Estadio Akron, Guadalajara, Meksiko
+- 19 Jun 2026 19:00 UTC | Amerika Serikat vs Australia | Lumen Field, Seattle, USA
+- 19 Jun 2026 22:00 UTC | Skotlandia vs Maroko | Gillette Stadium, Foxborough, USA
+- 20 Jun 2026 00:30 UTC | Brasil vs Haiti | Lincoln Financial Field, Philadelphia, USA
+- 20 Jun 2026 04:00 UTC | Turki vs Paraguay | Levi's Stadium, Santa Clara, USA
+- 20 Jun 2026 17:00 UTC | Belanda vs Swedia | NRG Stadium, Houston, USA
+- 20 Jun 2026 20:00 UTC | Jerman vs Pantai Gading | BMO Field, Toronto, Kanada
+- 21 Jun 2026 00:00 UTC | Ekuador vs Curaçao | Arrowhead Stadium, Kansas City, USA
+- 21 Jun 2026 04:00 UTC | Tunisia vs Jepang | Estadio BBVA, Monterrey, Meksiko
+- 21 Jun 2026 16:00 UTC | Spanyol vs Arab Saudi | Mercedes-Benz Stadium, Atlanta, USA
+- 21 Jun 2026 19:00 UTC | Belgia vs Iran | SoFi Stadium, Los Angeles, USA
+- 21 Jun 2026 22:00 UTC | Uruguay vs Tanjung Verde | Hard Rock Stadium, Miami Gardens, USA
+- 22 Jun 2026 01:00 UTC | Selandia Baru vs Mesir | BC Place Stadium, Vancouver, Kanada
+- 22 Jun 2026 17:00 UTC | Argentina vs Austria | AT&T Stadium, Dallas, USA
+- 22 Jun 2026 21:00 UTC | Prancis vs Irak | Lincoln Financial Field, Philadelphia, USA
+- 23 Jun 2026 00:00 UTC | Norwegia vs Senegal | MetLife Stadium, East Rutherford, USA
+- 23 Jun 2026 03:00 UTC | Yordania vs Aljazair | Levi's Stadium, Santa Clara, USA
+- 23 Jun 2026 17:00 UTC | Portugal vs Uzbekistan | NRG Stadium, Houston, USA
+- 23 Jun 2026 20:00 UTC | Inggris vs Ghana | Gillette Stadium, Foxborough, USA
+- 23 Jun 2026 23:00 UTC | Panama vs Kroasia | BMO Field, Toronto, Kanada
+- 24 Jun 2026 02:00 UTC | Kolombia vs Kongo DR | Estadio Akron, Guadalajara, Meksiko
+Putaran 3 (Matchday 3)
+- 24 Jun 2026 19:00 UTC | Bosnia dan Herzegovina vs Qatar | Lumen Field, Seattle, USA
+- 24 Jun 2026 19:00 UTC | Swiss vs Kanada | BC Place Stadium, Vancouver, Kanada
+- 24 Jun 2026 22:00 UTC | Maroko vs Haiti | Mercedes-Benz Stadium, Atlanta, USA
+- 24 Jun 2026 22:00 UTC | Skotlandia vs Brasil | Hard Rock Stadium, Miami Gardens, USA
+- 25 Jun 2026 01:00 UTC | Ceko vs Meksiko | Estadio Azteca, Mexico City, Meksiko
+- 25 Jun 2026 01:00 UTC | Afrika Selatan vs Korea Selatan | Estadio BBVA, Monterrey, Meksiko
+- 25 Jun 2026 20:00 UTC | Curaçao vs Pantai Gading | Lincoln Financial Field, Philadelphia, USA
+- 25 Jun 2026 20:00 UTC | Ekuador vs Jerman | MetLife Stadium, East Rutherford, USA
+- 25 Jun 2026 23:00 UTC | Jepang vs Swedia | AT&T Stadium, Dallas, USA
+- 25 Jun 2026 23:00 UTC | Tunisia vs Belanda | Arrowhead Stadium, Kansas City, USA
+- 26 Jun 2026 02:00 UTC | Paraguay vs Australia | Levi's Stadium, Santa Clara, USA
+- 26 Jun 2026 02:00 UTC | Turki vs Amerika Serikat | SoFi Stadium, Los Angeles, USA
+- 26 Jun 2026 19:00 UTC | Norwegia vs Prancis | Gillette Stadium, Foxborough, USA
+- 26 Jun 2026 19:00 UTC | Senegal vs Irak | BMO Field, Toronto, Kanada
+- 27 Jun 2026 00:00 UTC | Tanjung Verde vs Arab Saudi | NRG Stadium, Houston, USA
+- 27 Jun 2026 00:00 UTC | Uruguay vs Spanyol | Estadio Akron, Guadalajara, Meksiko
+- 27 Jun 2026 03:00 UTC | Mesir vs Iran | Lumen Field, Seattle, USA
+- 27 Jun 2026 03:00 UTC | Selandia Baru vs Belgia | BC Place Stadium, Vancouver, Kanada
+- 27 Jun 2026 21:00 UTC | Kroasia vs Ghana | Lincoln Financial Field, Philadelphia, USA
+- 27 Jun 2026 21:00 UTC | Panama vs Inggris | MetLife Stadium, East Rutherford, USA
+- 27 Jun 2026 23:30 UTC | Kolombia vs Portugal | Hard Rock Stadium, Miami Gardens, USA
+- 27 Jun 2026 23:30 UTC | Kongo DR vs Uzbekistan | Mercedes-Benz Stadium, Atlanta, USA
+- 28 Jun 2026 02:00 UTC | Aljazair vs Austria | Arrowhead Stadium, Kansas City, USA
+- 28 Jun 2026 02:00 UTC | Yordania vs Argentina | AT&T Stadium, Dallas, USA
+Babak 32 Besar (Round of 32)
+- 28 Jun 2026 19:00 UTC | Peringkat 2 Grup A vs Peringkat 2 Grup B | SoFi Stadium, Los Angeles, USA
+- 29 Jun 2026 17:00 UTC | Juara Grup C vs Peringkat 2 Grup F | NRG Stadium, Houston, USA
+- 29 Jun 2026 20:30 UTC | Juara Grup E vs Peringkat 3 Terbaik (Grup A/B/C/D/F) | Gillette Stadium, Foxborough, USA
+- 30 Jun 2026 01:00 UTC | Juara Grup F vs Peringkat 2 Grup C | Estadio BBVA, Monterrey, Meksiko
+- 30 Jun 2026 17:00 UTC | Peringkat 2 Grup E vs Peringkat 2 Grup I | AT&T Stadium, Dallas, USA
+- 30 Jun 2026 21:00 UTC | Juara Grup I vs Peringkat 3 Terbaik (Grup C/D/F/G/H) | MetLife Stadium, East Rutherford, USA
+- 1 Jul 2026 01:00 UTC | Juara Grup A vs Peringkat 3 Terbaik (Grup C/E/F/H/I) | Estadio Azteca, Mexico City, Meksiko
+- 1 Jul 2026 16:00 UTC | Juara Grup L vs Peringkat 3 Terbaik (Grup E/H/I/J/K) | Mercedes-Benz Stadium, Atlanta, USA
+- 1 Jul 2026 20:00 UTC | Juara Grup G vs Peringkat 3 Terbaik (Grup E/H/I/J/K) | Lumen Field, Seattle, USA
+- 2 Jul 2026 00:00 UTC | Juara Grup D vs Peringkat 3 Terbaik (Grup B/E/F/I/J) | Levi's Stadium, Santa Clara, USA
+- 2 Jul 2026 19:00 UTC | Juara Grup H vs Peringkat 2 Grup J | SoFi Stadium, Los Angeles, USA
+- 2 Jul 2026 23:00 UTC | Peringkat 2 Grup K vs Peringkat 2 Grup L | BMO Field, Toronto, Kanada
+- 3 Jul 2026 03:00 UTC | Juara Grup B vs Peringkat 3 Terbaik (Grup E/F/G/I/J) | BC Place Stadium, Vancouver, Kanada
+- 3 Jul 2026 18:00 UTC | Peringkat 2 Grup D vs Peringkat 2 Grup G | AT&T Stadium, Dallas, USA
+- 3 Jul 2026 22:00 UTC | Juara Grup J vs Peringkat 2 Grup H | Hard Rock Stadium, Miami Gardens, USA
+- 4 Jul 2026 01:30 UTC | Juara Grup K vs Peringkat 3 Terbaik (Grup D/E/I/J/L) | Arrowhead Stadium, Kansas City, USA
+Babak 16 Besar (Round of 16)
+- 4 Jul 2026 17:00 UTC | TBC vs TBC1 | NRG Stadium, Houston, USA
+- 4 Jul 2026 21:00 UTC | TBC vs TBC2 | Lincoln Financial Field, Philadelphia, USA
+- 5 Jul 2026 20:00 UTC | TBC vs TBC3 | MetLife Stadium, East Rutherford, USA
+- 6 Jul 2026 00:00 UTC | TBC vs TBC4 | Estadio Azteca, Mexico City, Meksiko
+- 6 Jul 2026 19:00 UTC | TBC vs TBC5 | AT&T Stadium, Dallas, USA
+- 7 Jul 2026 00:00 UTC | TBC vs TBC6 | Lumen Field, Seattle, USA
+- 7 Jul 2026 16:00 UTC | TBC vs TBC7 | Mercedes-Benz Stadium, Atlanta, USA
+- 7 Jul 2026 20:00 UTC | TBC vs TBC8 | BC Place Stadium, Vancouver, Kanada
+Perempat Final (Quarter-Finals)
+- 9 Jul 2026 20:00 UTC | TBC vs TBC9 | Gillette Stadium, Foxborough, USA
+- 10 Jul 2026 19:00 UTC | TBC vs TBC10 | SoFi Stadium, Los Angeles, USA
+- 10 Jul 2026 21:00 UTC | TBC vs TBC11 | Hard Rock Stadium, Miami Gardens, USA
+- 12 Jul 2026 01:00 UTC | TBC vs TBC12 | Arrowhead Stadium, Kansas City, USA
+Semi-Final
+- 14 Jul 2026 19:00 UTC | TBC vs TBC13 | AT&T Stadium, Dallas, USA
+- 15 Jul 2026 19:00 UTC | TBC vs TBC14 | Mercedes-Benz Stadium, Atlanta, USA
+Finals
+- 18 Jul 2026 21:00 UTC | Perebutan Juara Ketiga vs TBC15 | Hard Rock Stadium, Miami Gardens, USA
+- 19 Jul 2026 19:00 UTC | FINAL vs TBC16 | MetLife Stadium, East Rutherford, USA

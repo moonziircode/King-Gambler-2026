@@ -1,0 +1,182 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global Catch-all Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ------------------------------------------------------------------------
+    // GLOBALS & PRIMITIVES
+    // ------------------------------------------------------------------------
+    function isValidId(id) { 
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    
+    // Auth checking (Requires verified email)
+    function isSignedIn() { 
+      return request.auth != null && request.auth.uid != null && request.auth.token.email_verified == true; 
+    }
+    function isOwner(uid) { 
+      return isSignedIn() && request.auth.uid == uid; 
+    }
+
+    // Admins configuration - backend script can use admin role, but clients can't.
+    // For now, no admins are assigned from client. Only Firebase Admin SDK has full access.
+
+    // ------------------------------------------------------------------------
+    // VALIDATION BLUEPRINTS
+    // ------------------------------------------------------------------------
+    
+    function isValidUserCreate(data) {
+      return data.keys().hasAll(['displayName', 'photoURL', 'totalPoints', 'exacts', 'closes'])
+          && data.keys().size() == 5
+          && data.displayName is string && data.displayName.size() <= 100
+          && data.photoURL is string && data.photoURL.size() <= 1000
+          && data.totalPoints is number && data.totalPoints == 0
+          && data.exacts is number && data.exacts == 0
+          && data.closes is number && data.closes == 0;
+    }
+
+    function isValidUserUpdate(data) {
+      return data.diff(existing()).affectedKeys().hasOnly(['displayName', 'photoURL'])
+          && data.displayName is string && data.displayName.size() <= 100
+          && data.photoURL is string && data.photoURL.size() <= 1000;
+    }
+
+    function isValidLeagueCreate(data, uid) {
+      return data.keys().hasAll(['name', 'hostId', 'code', 'createdAt'])
+          && data.keys().size() == 4
+          && data.name is string && data.name.size() > 0 && data.name.size() <= 60
+          && data.hostId is string && data.hostId == uid
+          && data.code is string && data.code.size() > 0 && data.code.size() <= 20
+          && data.createdAt == request.time;
+    }
+
+    function isValidLeagueMemberCreate(data, uid) {
+      return data.keys().hasAll(['userId', 'role', 'joinedAt', 'points', 'exacts', 'closes'])
+          && data.keys().size() == 6
+          && data.userId is string && data.userId == uid
+          && data.role is string && data.role in ['host', 'player']
+          && data.joinedAt == request.time
+          && data.points is number && data.points == 0
+          && data.exacts is number && data.exacts == 0
+          && data.closes is number && data.closes == 0;
+    }
+
+    function isValidLeagueChatMessageCreate(data, uid) {
+      return data.keys().hasAll(['userId', 'text', 'createdAt'])
+          && data.keys().size() == 3
+          && data.userId is string && data.userId == uid
+          && data.text is string && data.text.size() > 0 && data.text.size() <= 500
+          && data.createdAt == request.time;
+    }
+
+    function isValidPredictionCreate(data, uid, matchId) {
+      return data.keys().hasAll(['userId', 'matchId', 'scoreA', 'scoreB', 'kickoffTime', 'updatedAt', 'points'])
+          && data.keys().size() == 7
+          && data.userId is string && data.userId == uid
+          && data.matchId is string && data.matchId == matchId
+          && data.scoreA is number && data.scoreA >= 0 && data.scoreA <= 50
+          && data.scoreB is number && data.scoreB >= 0 && data.scoreB <= 50
+          && data.kickoffTime is number 
+          && data.updatedAt == request.time
+          && data.points is number && data.points == 0;
+    }
+
+    function isValidPredictionUpdate(data) {
+      return data.diff(existing()).affectedKeys().hasOnly(['scoreA', 'scoreB', 'updatedAt'])
+          && data.scoreA is number && data.scoreA >= 0 && data.scoreA <= 50
+          && data.scoreB is number && data.scoreB >= 0 && data.scoreB <= 50
+          && data.updatedAt == request.time;
+    }
+
+    // ------------------------------------------------------------------------
+    // COLLECTIONS
+    // ------------------------------------------------------------------------
+
+    // Users
+    match /users/{userId} {
+      allow read: if isSignedIn(); // Public profiles
+      allow create: if isOwner(userId)
+                    && isValidId(userId)
+                    && isValidUserCreate(incoming());
+      
+      allow update: if isOwner(userId)
+                    && isValidId(userId)
+                    && isValidUserUpdate(incoming());
+    }
+
+    // Leagues
+    match /leagues/{leagueId} {
+      allow get: if isSignedIn(); // Allow get for joining
+      // We don't allow list blindly. Client shouldn't list all leagues.
+      
+      allow create: if isSignedIn()
+                    && isValidId(leagueId)
+                    && isValidLeagueCreate(incoming(), request.auth.uid)
+                    // Ensure the creator atomatically adds themselves as a member
+                    // Wait, we can't easily enforce existsAfter on subcollections perfectly without full batch transaction 
+                    // that creates both, but client can just do batch. 
+                    // Let's enforce that if league is created, member is created.
+                    && existsAfter(/databases/$(database)/documents/leagues/$(leagueId)/members/$(request.auth.uid));
+
+      // Host can change name
+      allow update: if isSignedIn()
+                    && isValidId(leagueId)
+                    && existing().hostId == request.auth.uid
+                    && incoming().diff(existing()).affectedKeys().hasOnly(['name'])
+                    && incoming().name is string && incoming().name.size() > 0 && incoming().name.size() <= 60;
+
+      // League Members
+      match /members/{memberId} {
+        allow read: if isSignedIn() && exists(/databases/$(database)/documents/leagues/$(leagueId)/members/$(request.auth.uid));
+        
+        allow create: if isOwner(memberId)
+                      && isValidId(memberId)
+                      && isValidLeagueMemberCreate(incoming(), request.auth.uid)
+                      && exists(/databases/$(database)/documents/leagues/$(leagueId)); // League must exist
+      }
+
+      // League Chat
+      match /chat/{messageId} {
+        allow read: if isSignedIn() && exists(/databases/$(database)/documents/leagues/$(leagueId)/members/$(request.auth.uid));
+        allow create: if isSignedIn()
+                      && isValidId(messageId)
+                      && isValidLeagueChatMessageCreate(incoming(), request.auth.uid)
+                      && exists(/databases/$(database)/documents/leagues/$(leagueId)/members/$(request.auth.uid));
+      }
+    }
+
+    // Matches (Read-only for clients. Admin SDK will write these)
+    match /matches/{matchId} {
+      allow read: if isSignedIn();
+
+      // Predictions
+      match /predictions/{predictionId} {
+        // Blind prediction: Can only read if owner OR match has kicked off.
+        // We use request.time.toMillis() vs kickoffTime
+        allow read: if isSignedIn() 
+                    && (isOwner(predictionId) || request.time.toMillis() >= existing().kickoffTime);
+        
+        allow create: if isOwner(predictionId)
+                      && isValidId(predictionId)
+                      && isValidPredictionCreate(incoming(), request.auth.uid, matchId)
+                      && exists(/databases/$(database)/documents/matches/$(matchId))
+                      // Ensure prediction is before kickoff
+                      && request.time.toMillis() < incoming().kickoffTime
+                      // Verify the match document's kickoff time matches our payload so they can't spoof it
+                      && get(/databases/$(database)/documents/matches/$(matchId)).data.kickoffTime == incoming().kickoffTime;
+                      
+        allow update: if isOwner(predictionId)
+                      && isValidId(predictionId)
+                      && isValidPredictionUpdate(incoming())
+                      // Ensure prediction update is before kickoff
+                      && request.time.toMillis() < existing().kickoffTime;
+      }
+    }
+  }
+}
