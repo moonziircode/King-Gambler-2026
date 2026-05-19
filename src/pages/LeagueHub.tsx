@@ -4,7 +4,7 @@ import { useAuth } from '../AuthContext';
 import { db } from '../firebase';
 import { doc, getDoc, collection, query, orderBy, onSnapshot, getDocs, where, setDoc, serverTimestamp, writeBatch } from 'firebase/firestore';
 import { Users, Crosshair, MessageSquare, Settings, Copy, Check, Clock, TrendingUp, TrendingDown, Minus } from 'lucide-react';
-import { Button } from '../components/ui/button';
+import { Button } from '../components/ui/ButtonUI';
 import { handleFirestoreError, OperationType } from '../lib/firestore-error';
 import { format } from 'date-fns';
 

@@ -5,7 +5,7 @@ import { Plus, Users, ArrowRight } from 'lucide-react';
 import { db } from '../firebase';
 import { collectionGroup, query, where, getDocs, doc, setDoc, getDoc, serverTimestamp, writeBatch, collection } from 'firebase/firestore';
 import { handleFirestoreError, OperationType } from '../lib/firestore-error';
-import { Button } from '../components/ui/button';
+import { Button } from '../components/ui/ButtonUI';
 
 interface JoinedLeague {
   id: string;
