@@ -3,7 +3,7 @@ import { useAuth } from '../AuthContext';
 import { Navigate } from 'react-router-dom';
 import { ArrowRight, Trophy, Users, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Button } from '../components/ui/button';
+import { Button } from '@/components/ui/button';
 
 export default function LandingPage() {
   const { user, signIn } = useAuth();
