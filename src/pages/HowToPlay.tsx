@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, CheckCircle2, ChevronRight, Calculator, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Button } from '../components/ui/ButtonUI';
+import { Button } from '../components/ui/button';
 
 export default function HowToPlay() {
   return (
