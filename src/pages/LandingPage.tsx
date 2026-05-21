@@ -3,7 +3,6 @@ import { useAuth } from '../AuthContext';
 import { Navigate } from 'react-router-dom';
 import { ArrowRight, Trophy, Users, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Button } from '@/components/ui/button';
 
 export default function LandingPage() {
   const { user, signIn } = useAuth();
@@ -51,14 +50,13 @@ export default function LandingPage() {
               required
               className="flex-1 h-14 bg-[#0F172A] border-2 border-slate-700 rounded-xl text-center text-lg font-bold text-emerald-400 focus:border-emerald-500 outline-none uppercase tracking-widest placeholder:text-slate-600"
             />
-            <Button 
-              type="submit"
-              size="lg" 
-              className="h-14 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-lg px-8 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all shrink-0"
-            >
-              MULAI
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+        <button
+  type="submit"
+  className="h-14 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-lg px-8 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all shrink-0"
+>
+  MULAI
+  <ArrowRight className="ml-2 w-5 h-5" />
+</button>
           </form>
         </div>
       </motion.div>
