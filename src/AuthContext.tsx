@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { User, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
 import { auth, db } from './firebase';
 import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
 import { handleFirestoreError, OperationType } from './lib/firestore-error';
@@ -17,7 +17,7 @@ interface AuthContextType {
   user: User | null;
   profile: UserProfile | null;
   loading: boolean;
-  signIn: (code: string) => Promise<void>;
+  signIn: () => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -62,19 +62,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return () => unsubscribe();
   }, []);
 
-  const signIn = async (code: string) => {
-    const cleanCode = code.toLowerCase().trim().replace(/[^a-z0-9]/g, '');
-    if (!cleanCode || cleanCode.length < 3) throw new Error("Kode unik minimal 3 karakter huruf/angka.");
-    const email = `${cleanCode}@kinggambler.local`;
-    const pass = `Kg!${cleanCode}#2026`;
+  const signIn = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, pass);
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
     } catch (e: any) {
-      if (e.code === 'auth/user-not-found' || e.code === 'auth/invalid-credential' || e.code === 'auth/invalid-login-credentials') {
-        await createUserWithEmailAndPassword(auth, email, pass);
-      } else {
-        throw e;
-      }
+      throw e;
     }
   };
 
