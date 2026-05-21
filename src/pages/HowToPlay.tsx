@@ -1,8 +1,7 @@
 import React from 'react';
 import { Target, CheckCircle2, ChevronRight, Calculator, Trophy } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
+import { Link } from 'react-router-dom';
 export default function HowToPlay() {
   return (
     <div className="w-full max-w-4xl bg-slate-900 p-8 md:p-12 rounded-3xl shadow-xl border border-slate-800">

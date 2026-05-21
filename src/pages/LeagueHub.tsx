@@ -166,14 +166,14 @@ export default function LeagueHub() {
           { id: 'chat', icon: MessageSquare, label: 'CHAT' },
           { id: 'settings', icon: Settings, label: 'SETTINGS' }
         ].map(t => (
-          <button
+          <Button
             key={t.id}
             onClick={() => setActiveTab(t.id)}
             className={`flex items-center gap-2 px-6 py-4 font-black tracking-wider text-xs transition-colors whitespace-nowrap
               ${activeTab === t.id ? 'text-emerald-400 border-b-2 border-emerald-400 bg-emerald-500/5' : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/50'}`}
           >
             <t.icon className="w-4 h-4" /> {t.label}
-          </button>
+          </Button>
         ))}
       </div>
 
@@ -320,7 +320,7 @@ export default function LeagueHub() {
                  <div className="flex-1 bg-[#0F172A] py-3 rounded-xl font-mono text-2xl font-bold tracking-[0.25em] text-emerald-400 border border-slate-800">
                     {league.code}
                  </div>
-                 <Button onClick={handleCopyCode} variant="outline" className="h-full px-4 py-3 shrink-0 bg-[#0F172A] border-slate-800 hover:bg-slate-800 text-slate-300">
+                 <Button onClick={handleCopyCode} className="h-full px-4 py-3 shrink-0 bg-[#0F172A] border-slate-800 hover:bg-slate-800 text-slate-300">
                    {copied ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5 text-slate-400" />}
                  </Button>
                </div>

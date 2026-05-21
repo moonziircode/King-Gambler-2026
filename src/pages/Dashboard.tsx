@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../AuthContext';
 import { Link } from 'react-router-dom';
 import { Plus, Users, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { db } from '../firebase';
 import { collectionGroup, query, where, getDocs, doc, setDoc, getDoc, serverTimestamp, writeBatch, collection } from 'firebase/firestore';
 import { handleFirestoreError, OperationType } from '../lib/firestore-error';
-import { Button } from '@/components/ui/button';
-
 interface JoinedLeague {
   id: string;
   name: string;
